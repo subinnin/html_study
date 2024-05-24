@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라인컴퓨터아트학원</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Hahmlet:wght@500&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <style>
+        body {margin:0;}
+        #layout01 {max-width:900px; margin:auto;}
+        header {background:linear-gradient(white, skyblue); padding: 10px; text-align : center;}
+    
+        h1 {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;}
+        div main {
+                 font-family: "Dongle", sans-serif;
+                 font-weight: 400;
+                 font-style: normal;}
+        div main p {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 300;
+            font-style: normal;}
+        div aside {
+            font-family: "Dongle", sans-serif;
+            font-weight: 600;
+            font-style: normal; }
+        div aside p {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 300;
+            font-style: normal;}
+        nav ul {
+            display:flex; /*list-style-position: inside;*/ padding-left:0; max-width:700px; margin:auto;padding:30px; /*list-style-type:circle;*/list-style:none; flex-wrap:wrap; justify-content:center;}
+        nav li { /*flex:1;*/margin:auto; text-align:center; border:0.1pt; transition:0.5s;flex-basis:120px;}
+        nav li:hover {transform: scale(1.5); transition:1s;}
+        nav a {color:black; text-decoration-line:none; 
+                font-family: "Hahmlet", serif;
+                font-optical-sizing: auto;
+                font-weight: 500;
+                font-style: normal;}
+        #layout02 {display:flex; }
+        main {flex:2;}
+        aside{flex:1;}
+    
+        main section {background : antiquewhite; padding:20px; }
+        main section:hover{transform:rotate(10deg); transition:1s;}
+        main article {background : thistle; padding:20px;}
+        main article:hover {transform:rotate(-10deg); transition:1s;}
+        main h2 {text-align:center;}
+
+        aside {background:khaki; padding:20px;}
+        aside:hover {background:linear-gradient(tomato,gold); transition:1s;}
+        aside h3 {text-align:center;}
+        
+        footer {background:linear-gradient(orange, yellow) ;padding:20px; text-align : center;}
+        footer:hover {background:linear-gradient(yellow,orange)}
+        footer {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 300;
+            font-style: normal;}
+
+        /*작은 기계장치에 대한 설정 (최대넓이 : 550px) 0~550px까지 적용*/
+        @media(max-width:500px) {
+            #layout02 {flex-direction: column;}
+            nav li:nth-child(4),
+            nav li:nth-child(5){display:none;}
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="layout01">
+        <header>
+            <h1>마크업 첫걸음</h1>
+        </header>
+        <nav>
+            <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+            </ul>
+        </nav>
+        <div id="layout02">
+            <main>
+                <section>
+                    <h2> 정보구역-1 </h2>
+                    <p>국무총리는 국회의 동의를 얻어 대통령이 임명한다. 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를 진다. 위원은 정당에 가입하거나 정치에 관여할 수 없다.</p>
+
+                    <p>국회의원은 그 지위를 남용하여 국가·공공단체 또는 기업체와의 계약이나 그 처분에 의하여 재산상의 권리·이익 또는 직위를 취득하거나 타인을 위하여 그 취득을 알선할 수 없다.</p>
+                </section>
+                <article>
+                    <h2> 정보구역-2 </h2>
+                    <p>국가는 과학기술의 혁신과 정보 및 인력의 개발을 통하여 국민경제의 발전에 노력하여야 한다. 모든 국민은 소급입법에 의하여 참정권의 제한을 받거나 재산권을 박탈당하지 아니한다.
+                    </p>
+                </article>
+            </main>
+            <aside>
+                <h3>부가정보</h3>
+                <p>국회는 국무총리 또는 국무위원의 해임을 대통령에게 건의할 수 있다.</p>
+
+                <p>법원은 최고법원인 대법원과 각급법원으로 조직된다. 국군은 국가의 안전보장과 국토방위의 신성한 의무를 수행함을 사명으로 하며, 그 정치적 중립성은 준수된다.</p>
+
+                <p>공무원은 국민전체에 대한 봉사자이며, 국민에 대하여 책임을 진다.</p>
+            </aside>
+        </div>
+            <footer>
+                하단구역
+            </footer>
+    </div>
+</body>
+</html>
