@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 요소에 컨텐츠 넣기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <style>
+        * {margin:0; padding:0;}
+        body {margin-top:20px;}
+        section {max-width: 900px; border:3px solid blue; border-radius: 30px; /*transform: rotate(-20deg);box-shadow: -3px -3px 10px red;*/}
+        section {display: flex; align-items: center;background:lightsalmon;}
+        /*section:hover {transform: rotate(0); transition:0.5s; cursor:pointer;}*/
+        h1 {
+        font-family: "Dongle", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+        
+        h1{flex:1; background: antiquewhite;padding:30px; border-top-left-radius:30px;border-bottom-left-radius:30px;}
+        ol{flex:2; background: lightcyan; list-style-position: inside;padding:20px; }
+        p {flex:1; background:pink; border-top-right-radius:30px;border-bottom-right-radius:30px;}
+    </style>
+    
+</head>
+<body>
+    <section>
+        <h1>반응형 웹퍼블리싱 학습 순서</h1>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <p>11111</p>
+        <p>11111</p>
+        <p>11111</p>
+
+    </section>
+
+    <script>
+        let x=5; //변수선언
+        let y=3; //변수선언
+        x = 20; //재할당
+        document.querySelector('p').innerHTML = x+y; //23
+        document.querySelector('h1').style.background = 'gold';
+        document.querySelectorAll('ol')[1].style.background = 'tomato';
+        document.querySelectorAll('p')[2].innerHTML = y;
+        document.querySelectorAll('p')[2].style.border = '4px dashed red';
+        //document.querySelectorAll('ol li')[3].style.border = '4px dashed red';
+        //document.querySelectorAll('ol:last-of-type li')[2].style.background = 'yellow';
+        //for(let i=0; i<5; i++;)
+
+        //비교문 학습 (결과값은 TRUE 혹은 FALSE이다)
+        console.log(5==5); //비교문
+        console.log(x<y);
+        console.log(x>=y);
+        x++; //x=x+1; 와 같다  20 = 20+1; 20=21; 결과는 21의 대상변수는 x이므로 x=21;
+        y--; 
+        console.log(y); //2
+
+    </script>
+</body>
+</html>

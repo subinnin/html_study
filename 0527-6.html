@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 배열(array) 객체 연습하기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <style>
+        * {margin:0; padding:0;}
+        body {margin-top:20px;}
+        section {max-width: 900px; border:3px solid blue; border-radius: 30px; /*transform: rotate(-20deg);box-shadow: -3px -3px 10px red;*/}
+        section {display: flex; align-items: center;background:lightsalmon;}
+        /*section:hover {transform: rotate(0); transition:0.5s; cursor:pointer;}*/
+        h1 {
+        font-family: "Dongle", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+        
+        h1{flex:1; background: antiquewhite;padding:30px; border-top-left-radius:30px;border-bottom-left-radius:30px;}
+        ol{flex:2; background: lightcyan; list-style-position: inside;padding:20px; }
+        p {flex:1; background:pink; border-top-right-radius:30px;border-bottom-right-radius:30px;}
+    </style>
+    
+</head>
+<body>
+    <section>
+        <h1>반응형 웹퍼블리싱 학습 순서</h1>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <p>11111</p>
+        <p>11111</p>
+        <p>11111</p>
+
+    </section>
+
+    <script>
+        //array 객체를 선언하고 5개의 값을 할당하였다
+        const myFruits = ['배', '딸기', '바나나', '복숭아', '수박']; //속성이 없음
+        console.log(myFruits);
+    
+        console.log(typeof myFruits); //array도 객체의 일종
+        console.log("오늘은 귀갓길에 " + myFruits[4] + "를 살 것이다");
+        
+        document.querySelectorAll('p')[1].innerHTML = myFruits;
+        //document.querySelectorAll('p')[2].innerHTML = myFruits[4];
+        document.querySelector('p:last-of-type').innerHTML = myFruits[4];
+        document.querySelector('p:nth-of-type(1)').innerHTML = myFruits[3];
+        //두가지 방법으로 할 수 있다 
+
+        //배열연습 (로또 추첨 번호 생성)
+        let lotto = [35, 44, 8, 13, 20, 27]
+        //document.querySelectorAll('p')[0].innerHTML = lotto[0];
+        document.querySelector('p:first-of-type').innerHTML = lotto[4];
+    </script>
+</body>
+</html>
