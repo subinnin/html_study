@@ -84,9 +84,9 @@
         #popup {
             background: orange;
             position:absolute;
-            width:500px;
-            height:400px;
-            left:calc((100% / 2) - 250px);
+            width:300px;
+            height:200px;
+            left:calc((100% / 2) - 50px);
             top:120px;
             border-radius: 30px;
             padding:20px;
