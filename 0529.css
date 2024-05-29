@@ -95,11 +95,11 @@
             /*padding만큼 커지지 않음*/
             /*z-index: 2;
             뒤에 가려졌으면 z-index 해보기*/
+            max-width:100%;
         }
         #popup button{
             padding:3px 6px;
             position:absolute;
             bottom: 20px;
             right:20px;
-            max-width:100%;
         }
