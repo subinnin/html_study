@@ -84,8 +84,8 @@
         #popup {
             background: orange;
             position:absolute;
-            width:300px;
-            height:200px;
+            width:500px;
+            height:400px;
             left : 50%;
             top : 50%;
             transform : translate(-50%, -50%);
@@ -96,15 +96,14 @@
             /*padding만큼 커지지 않음*/
             /*z-index: 2;
             뒤에 가려졌으면 z-index 해보기*/
-                    }
+        }
         #popup button{
             padding:3px 6px;
             position:absolute;
             bottom: 20px;
             right:20px;
         }
-
         /*작은기계장치*/
-        @media(max-width:550px;){
-            #popup {width:100%;}
+        @media(max-width:550px){
+            #popup {width:100%;left:0;}
         }
