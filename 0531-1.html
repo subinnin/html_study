@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+    <style>
+        form {max-width: 300px;}
+        fieldset {border:2px double pink; 
+                border-radius: 20px; 
+                box-shadow: 3px 3px 5px lightcoral;
+                padding:0 30px;
+                background: rgba(255,205 ,205, 0.5);}
+        /*box-shadow x방향 y방향커짐정도 색깔*/
+        legend {background:white; 
+                color:coral;
+                text-align: center;
+                padding:0 10px;
+                font-weight: bold;
+                 font-size: 1.2rem;
+                background: radial-gradient(white, pink);
+                border-radius: 30px;}
+        input {float:right;}
+        footer {text-align: center;
+                border: 2px solid red;
+                max-width: 300px;margin:20px 0px;}
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>💻로그인💻</legend>
+            <p>🔒ID : <input type="text": required></p>
+            <p>🔑PW : <input type="password": required></p>
+            <p><button type="button">확인</button></p>
+            <!--required는 type="submit"이여야만 검증이된다-->
+        </fieldset>
+    </form>
+    <footer>1111</footer>
+    <script>
+        const x = document.querySelector("input");
+        const y = document.querySelectorAll("input")[1];
+    
+        const ok =document.querySelector("button");
+        ok.addEventListener("click",button1);
+        function button1() {
+            //alert ('버튼눌렀음');
+            //alert(x.value);
+            
+            document.querySelector("footer").innerHTML = x.value + y.value + "님이 로그인하셨습니다.";
+
+        }
+    </script>
+</body>
+</html>

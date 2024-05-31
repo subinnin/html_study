@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 스크립트</title>
+    <style>
+         table{
+            width:100%;
+            border-collapse : collapse;
+            max-width:500px;
+            margin:auto;
+        }
+        td,th{
+            border : 1px solid #000;
+        }
+        .c1{
+            background: #ff0;
+            width:50%;
+        }
+        .c2{
+            background: #0ff;
+            width:50%;
+        }
+        thead th { background : orange;}
+        body {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            }
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="c1">
+            <col class="c2">  
+        </colgroup>
+         <thead>
+            <tr>
+                <th>교과목</th>
+                <th>점수</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+                <th>HTML</th>
+                <td id="s1">93점</td>
+            </tr>
+            <tr>
+                <th>CSS</th>
+                <td id="s2">92점</td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+                <th id="h3"></th>
+                <td id="s3"></td>
+            </tr>
+         </tfoot>
+    </table>
+    <script>
+        /*for()문 연습
+        for(초기값; 비교문; 증가값) {
+            실행문;
+        }*/
+        /*for (let i=0; i<10; i++){
+            //alert(i+1);
+            if(i==3){
+                document.getElementById("s3").innerHTML = i;
+            }
+        }*/
+
+        for(let i = 2; i<10; i++){
+                document.getElementById("s3").innerHTML += ( i + "단 <br>") ;
+                for(let j = 1 ; j<10 ; j++){
+                    document.getElementById("s3").innerHTML += ( (i + "x" + j )+  "=" +(i * j)+ "<br>");
+                }
+                for(let j = 1 ; j<10 ; j++){
+                    document.getElementById("s3").innerHTML += ("<br>");
+                }
+            
+            }
+        
+    </script>
+</body>
+</html>

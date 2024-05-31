@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 캡션과 스코프</title>
+    <style>
+        table{ 
+            width:100%;
+            border-collapse:collapse;
+            
+        }
+        caption {
+            font-size: 1.3rem; /*30%커지는것*/
+            padding-bottom: 10px ;
+            
+            color:blueviolet;
+        }
+        td, th{
+            border : 1px solid #000;
+            text-align: center;
+            padding:5px;
+        }
+        tr td:nth-child(2) {text-align:center;}
+        /*tr td:first-of-type {text=align:center}*/
+    </style>
+</head>
+<body>
+    <table>
+        <caption>상품에 따른 상하반기 판매량</caption>
+        <colgroup>
+            <col style ="background-color: antiquewhite;">
+            <col style ="background-color: aliceblue;">
+            <col style ="background-color: azure;">
+        </colgroup>
+        <thead>
+        <tr>
+            <th scope="col">구분</th>
+            <th scope="col">데스크탑 PC</th>
+            <th scope="col">스마트폰</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope="row">상반기판매수</th>
+            <td>2만대</td>
+            <td>5만대</td>
+            </tr> 
+            <tr>  
+            <th scope="row">하반기판매수</th>
+            <td>3만대</td>
+            <td>7만대</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

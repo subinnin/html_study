@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        table{
+            width:100%;
+            border-collapse : collapse;
+            max-width:500px;
+            margin:auto;
+        }
+        td,th{
+            border : 1px solid #000;
+        }
+        .c1{
+            background: #ff0;
+            width:50%;
+        }
+        .c2{
+            background: #0ff;
+            width:50%;
+        }
+        thead th { background : orange;}
+        body {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="c1">
+            <col class="c2">  
+        </colgroup>
+         <thead>
+            <tr>
+                <th>교과목</th>
+                <th>점수</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+                <th>HTML</th>
+                <td id="s1">93점</td>
+            </tr>
+            <tr>
+                <th>CSS</th>
+                <td id="s2">92점</td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+                <th>평균</th>
+                <td id="s3"></td>
+            </tr>
+         </tfoot>
+    </table>
+    <script>
+        const cell_1 = document.getElementById ("s1");
+        const cell_2 = document.getElementById("s2");
+        const cell_3 = document.getElementById("s3");
+        
+        const cc1 = parseInt(cell_1.innerHTML);
+        const cc2 = parseInt(cell_2.innerHTML);
+        const cc3 = (cc1 + cc2) / 2;
+        
+        cell_3.innerHTML = (cc3) + '점';
+
+
+        parseInt("10점") ;
+        parseInt("10.00"); 
+        parseInt("10.33") ;
+        parseInt("34 45 66"); 
+        parseInt("   60   ") ;
+        parseInt("40 years") ;
+        parseInt("He was 40");
+
+    </script>
+</body>
+</html>

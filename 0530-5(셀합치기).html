@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 스크립트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+         table{
+            width:100%;
+            border-collapse : collapse;
+            max-width:500px;
+            margin:auto;
+        }
+        td,th{
+            border : 1px solid #000;
+            padding : 5px 0 8px;
+        }
+        td {text-align: center;}
+        .c1{
+            background: #ff0;
+            width:50%;
+        }
+        .c2{
+            background: #0ff;
+            width:50%;
+        }
+        thead th { background : orange;}
+        body {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            }
+            body {
+                font-family: "Nanum Pen Script", cursive;
+                font-weight: 400;
+                font-style: normal;
+                }
+            
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="c1">
+            <col class="c2">  
+        </colgroup>
+         <thead>
+            <tr>
+                <th colspan="2">교과목</th>
+                <!--<th>점수</th>-->
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+                <th rowspan="2">HTML+CSS</th>
+                <td id="s1">93점</td>
+            </tr>
+            <tr>
+                <!--<th>CSS</th>-->
+                <td id="s2">92점</td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+                <th>평균</th>
+                <td rowspan= "2" id="s3"></td>
+            </tr>
+            <tr>
+                <th>평균</th>
+                <!--<td></td>-->
+            </tr>
+            <tr>
+                <th colspan="2">연습중</th>
+                <!--<td>작업중</td>-->
+            </tr>
+         </tfoot>
+    </table>
+    <script>
+        
+    </script>
+</body>
+</html>

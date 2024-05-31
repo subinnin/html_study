@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 값을 받아와서 표시하기 input</title>
+    <style>
+        form {max-width: 400px;}
+        fieldset {border:2px double pink; 
+                border-radius: 20px; 
+                box-shadow: 3px 3px 5px lightcoral;
+                padding:0 30px;
+                background: rgba(255,205 ,205, 0.5);}
+        /*box-shadow x방향 y방향커짐정도 색깔*/
+        legend {background:white; 
+                color:coral;
+                text-align: center;
+                padding:0 10px;
+                font-weight: bold;
+                 font-size: 1.2rem;
+                background: radial-gradient(white, pink);
+                border-radius: 30px;}
+        input, span {float:right;}
+        footer {text-align: center;
+                border: 2px solid red;
+                max-width: 400px;margin:20px 0px;}
+        span { display: inline-block;}
+        #mmm {display:none;}
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>💻개인정보💻</legend>
+            <p><label for = "id">아이디</label>🔒ID : <input type="text" id="id"></p>
+            <p><label for = "pw">비밀번호</label>🔑PW : <input type="password" id="pw"></p>
+            
+            <p><label for = "sc">검색🔎</label><input type="search" id = "sc"></p>
+            <p><label for = "em">이메일📧</label><input type="email" id="em"></p>
+            <p><label for = "co">선호색상💚</label><input type="color" id="co"></p>
+            <p><label for = "ma">만족도</label> <input type="range" id="ma"></p>
+            <p>수신여부
+                <span>
+                    <input type="radio" id="y" name="email" value="수신하겠음"><label for = "y">예</label><br>
+                    <input type="radio" id="n" name="email" value="수신을 원치않음"><label for = "n">아니오</label>  
+                    <input type="radio" id="mmm" name="email" value="ㅁㅁㅁ" checked><label for = "mmm"></label>
+                </span></p>
+            <!--<p><label for = "ho">취미2개</label><input type="checkbox" id ="ho"></p>-->
+
+            <p><button type="button">확인</button></p>
+            <!--required는 type="submit"이여야만 검증이된다-->
+        </fieldset>
+    </form>
+    <footer>1111</footer>
+    <script>
+        const x1 = document.querySelector("#id");
+        const x2 = document.querySelector("#pw");
+        const x3 = document.querySelector("#sc");
+        const x4 = document.querySelector("#em");
+        const x5 = document.querySelector("#co");
+        const x6 = document.querySelector("#ma");
+        const x7 = document.querySelector('input[name="email"]');
+        const ok =document.querySelector("button");
+        ok.addEventListener("click",button1);
+        function button1() {
+            //alert ('버튼눌렀음');
+            const x7 = document.querySelector('input[name="email"]:checked');
+            document.querySelector("footer").innerHTML = (x1.value)+ "..."+ (x2.value) +"..." +(x3.value) +"..."+(x4.value) +"..."+(x5.value) +"..."+(x6.value)+"..."+(x7.value);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 인수2개</title>
+    <style>
+        table{ 
+            width:100%;
+            border-collapse:collapse;
+        }
+        caption {
+            font-size: 1.3rem; /*30%커지는것*/
+            padding-bottom: 10px ;
+            
+            color:black;
+        }
+        td, th{
+            border : 1px solid #000;
+            text-align: center;
+            padding:5px;
+        }
+        tr td:nth-child(2) {text-align:center;}
+        /*tr td:first-of-type {text=align:center}*/
+    </style>
+</head>
+<body>
+    <table>
+        <caption>🎁상품에 따른 상하반기 판매량🎁</caption>
+        <colgroup>
+            <col style ="background-color: rgba(252, 101, 154, 0.5);">
+            <col style ="background-color: pink">
+            <col style ="background-color: lightpink;">
+        </colgroup>
+        <thead>
+        <tr>
+            <th scope="col">구분</th>
+            <th scope="col">데스크탑 PC</th>
+            <th scope="col" onclick = "smart1('짜장면','짬뽕')">스마트폰</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope="row" onclick="up1('딸기라떼')">상반기판매수</th> <!--3은 argument인수-->
+            <td onclick ="gg()">2만대</td>
+            <td onclick ="test1(50,70)">5만대</td>
+            </tr> 
+            <tr>  
+            <th scope="row" onclick = "down1(3,5)">하반기판매수</th>
+            <td>3만대</td>
+            <td>7만대</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align: center;">몇대가 팔렸나요?</p> 
+    <script>
+        const ss = document.querySelector("tbody tr:first-child td:nth-child(2)");
+        const pp = document.querySelector("p");
+        ss.style.background = 'pink';
+        function gg(){
+            pp.innerHTML= "2️⃣" + ss.innerHTML+"2️⃣";
+        }
+        function up1( i ){
+            //alert (i);
+            pp.innerHTML = "🍓"+i + "는 " + typeof i+ "형 입니다."+"🍓";
+
+        } //i는 parameter 변수
+        function down1( i , j ){
+            //alert( i + j );
+            pp.innerHTML = "나는 오늘 오후" + (i + j) + "시에 친구👧🏻👩🏻와 중앙로 " + j +"가에서 만나기로 했다.";
+        }
+
+        function smart1(x , y){
+            //alert(x + y);
+            pp.innerHTML = "오늘은 친구👧🏻👩🏻와 " + x + "과 " + y +"을 같이 나눠 먹었다.";
+        }
+
+        function test1(a , b){
+            pp.innerHTML = "✔올해 목표는 " + (a + b) + "만대 판매입니다.✔"
+        }
+    </script>
+</body>
+</html>

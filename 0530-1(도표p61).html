@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        table{
+            width:100%;
+            border-collapse : collapse;
+            max-width:500px;
+            margin:auto;
+        }
+        td,th{
+            border : 1px solid #000;
+        }
+        .c1{
+            background: #ff0;
+            width:50%;
+        }
+        .c2{
+            background: #0ff;
+            width:50%;
+        }
+        thead th { background : orange;}
+        body {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="c1">
+            <col class="c2">  
+        </colgroup>
+         <thead>
+            <tr>
+                <th>교과목</th>
+                <th>점수</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+                <th>HTML</th>
+                <td id="s1">93</td>
+            </tr>
+            <tr>
+                <th>CSS</th>
+                <td id="s2"></td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+                <th>평균</th>
+                <td id="s3"></td>
+            </tr>
+         </tfoot>
+    </table>
+    <script>
+        const cell_1 = document.getElementById ("s1");
+        const cell_2 = document.getElementById("s2");
+        const cell_3 = document.getElementById("s3");
+        
+        cell_1.innerHTML = 93; //set
+        //cell_2.innerHTML = 92; //set
+        cell_3.innerHTML = (( 93 + 92 ) / 2 ); //set
+        
+        //alert (cell_1.innerHTML); 93을 get함
+        //alert (typeof cell_1.innerHTML); string을 반환함
+        //alert (cell_1.innerHTML + 5); 935를 반환함
+
+        let c2=Number(cell_1.innerHTML); //93
+        console.log (c2 + 5);
+        console.log (typeof c2);
+
+        c2 = --c2; //92 재할당
+        //c2 = c2--; //93
+        console.log(c2);
+
+        cell_2.innerHTML = c2;
+
+    </script>
+</body>
+</html>

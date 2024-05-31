@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성사용하여 폼만들고, 스크립트에 value값 표기</title>
+    <style>
+        form {max-width: 450px; margin: auto; padding:10px;}
+        /*p> input{float:right;}*/
+        input:not(#color, [type ="checkbox"],[type ="color"],[type="radio"]){width:100px;}
+        button:not([type="reset"]) {border:0;}
+        button img {width:130px;}
+        button {border:2px solid blue;}
+        fieldset {
+            border: 5px double palevioletred; 
+            background:pink; 
+            box-shadow: 5px 5px 10px palevioletred;
+            padding:30px;
+                }
+        legend {
+            text-align: center; 
+                font-size:1.5rem; 
+                font-style: oblique;
+            background:peachpuff;
+            padding:10px 100px;
+            border-radius: 20px;
+            border:5px dotted orange;
+            }
+        footer {border:2px dashed peru;}
+    </style>
+</head>
+<body>
+    <header></header>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Type 속성</legend>
+            <p>아이디 : <input type="text"></p>
+            <p>비밀번호 : <input type="password"></p>
+            <p>검색 : <input type="search"></p>
+            <p>이메일 : <input type="email"></p>
+            <p>전화번호 : <input type="tel"></p>
+            <p>컬러선택 : <input type="color"></p>
+            <p>수량 : <input type="number" min="1" max="10" value="1"></p>
+            <p>만족도 : <input type="range" min="1" max="10" value="1"></p>
+            <p>이메일수신여부 : <br>
+                <span>
+                    예<input type="radio" id="yes" value="수신함" name="receive" checked="checked">   아니오<input type="radio" id="no" value="수신안함" name="receive">
+                </span>
+            </p>
+            <p>
+                취미다중선택 : <br>
+                <input type="checkbox" id="h1" value="등산" name="hobby"><label for="h1">등산</label>
+                <input type="checkbox" id="h2" value="낚시" name="hobby"><label for="h2">낚시</label>
+                <input type="checkbox" id="h3" value="헬스" name="hobby"><label for="h3">헬스</label>
+                <input type="checkbox" id="h4" value="독서" name="hobby"><label for="h4">독서</label>
+                <input type="checkbox" id="h5" value="영화감상" name="hobby"><label for="h5">영화감상</label>
+                <input type="checkbox" id="h6" value="게임" name="hobby"><label for="h6">게임</label>
+            </p>
+            <p>
+                <input type="submit" value="전송">      
+                <input type="reset"  value="취소">     
+                <input id= "button1" type="button" value="확인">
+            </p>
+            <button><input id="image1" type="image" src="images/bt.png" alt="검색"></button>
+            <button><input type="image" src="images/btn.jpg" alt="확인하기"></button>
+            <p><input type="file"></p>
+        </fieldset>
+        <footer id ="ff">aaa</footer>
+    </form>
+    <script>
+        /*const f1 = document.querySelector('#id');
+        const btn = document.querySelector("#button1");
+        const he = document.querySelector("header");
+
+        btn.addEventListener("click",bb);
+        function bb(){
+        const hh = document.querySelectorAll("input[name=hobby]:checked");
+        for(const i of hh){
+            he.innerHTML += i.value + "...";
+            he.innerHTML = f1.value;}
+        }*/
+        
+        
+        const num = ["10", "20", "30", "40", "50"];
+        let qq = "";
+        for (const i of num){
+            qq += i + "<br>";
+           
+        }  
+        document.querySelector("#ff").innerHTML = qq;
+    </script>
+</body>
+</html>
