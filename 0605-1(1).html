@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반달모양, 부채꼴모양 만들기</title>
+    <style>
+        #ra {
+            max-width: 2000px; 
+            
+            border:10px solid salmon;
+            display: flex;
+            justify-content: center;
+        }
+         #ra div {
+            width:200px;
+            height:200px;
+            background: burlywood;
+            margin:10px;}
+
+        #ra div:first-of-type{
+            background-color: antiquewhite;
+            border-radius: 50% 50%;
+        }
+        #ra div:first-of-type:hover {
+            background-color: red;
+            transform:scale(2);
+            transition:1s;
+        }
+        #ra div:nth-of-type(2){
+            background-color: bisque;
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+            width: 400px;
+            position:relative; top:0;
+        }
+        #ra div:nth-of-type(2).up{
+            top:-150px;
+            transition:3s;
+        }
+        #ra div:nth-of-type(3){
+            background-color: #ffd7a3;
+            border-top-left-radius:200px;
+        }
+        #ra div:nth-of-type(4){
+            width:400px;
+            border-top-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        /*마우스호버 애니부분*/
+        #ani {
+            display: block;
+        }
+        #ani h2{
+            display: block;
+            margin-left: 20px;
+        }
+        #ani a {
+            display: block;
+            background-color: rgb(255, 189, 148);
+            padding:20px;
+            text-decoration: none;
+            color:black;
+            font-weight: bold;
+            margin:5px;
+            margin-left: 50px;
+            width: 400px;
+            font-size: 1.2rem;
+        }
+        #ani a:hover {
+            width:600px;
+            transition : 1s;
+            background-color: rgb(255, 176, 100);
+        }
+        /*마우스 호버시 이동*/
+        #move {
+            display: block;
+        }
+        #move h2{
+            display: block;
+        }
+        #move div:first-of-type{
+            width: 400px;
+            height: 200px;
+            border-radius: 0;
+            background:white;
+        }
+        /*사각 콘테이너에 마우스 호버시 위치가 이동되려면 준비가 되어있어야함
+        -> position*/
+        #move div:first-of-type:hover{
+            width: 200px;
+            height: 200px;
+            border-radius: 0;
+            background: url("images/3.png") no-repeat;
+            margin-left:70px;
+            transform: scale(1.2) rotate(360deg);
+            transition : 0.5s;
+        }
+        #move div:last-of-type{
+            width: 350px;
+            height: 280px;
+            border-radius: 0;
+            background:url("images/2.png");
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <section id = "move">
+        <h2>마우스 호버시 동물얼굴 나오기</h2>
+        <div></div>
+        <div></div>
+    </section>
+    <section id="ra">
+        <h2>반달이나 부채꼴모양 만들기</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <section id="ani">
+        <h2>마우스 호버 애니메이션</h2>
+        <nav> <a href="https://naver.com">Company</a></nav>
+        <nav> <a href="https://apple.com">Product</a></nav>
+        <nav> <a href="https://adobe.com">Service</a></nav>
+        <nav> <a href="https://google.com">Customer Support</a></nav>
+        <nav> <a href="https://youtube.com">Community</a></nav>
+    </section>
+    <script>
+        const ban = document.querySelector('#ra div:nth-of-type(2)');
+        ban.addEventListener("mouseenter", () => ban.classList.add('up'));
+        ban.addEventListener("mouseleave", () => ban.classList.remove('up'));
+</script>
+</body>
+</html>

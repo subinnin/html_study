@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펼침메뉴 (select option)</title>
+    <style>
+        h2 {
+            border:2px solid pink;
+            width: 300px;
+            text-align: center;
+            background: gold;}
+        body {
+            width:304px;
+            height:300px;
+            border:2px solid pink;
+            
+        }
+        #menu {
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <section id = "menu">
+        <h2>선호 음식 유형</h2>
+        <select>
+            <option>유형선택</option>
+            <option value="1">한식</option>
+            <option value="2">중식</option>
+            <option value="3">일식</option>
+            <option value="4">퓨전식</option>
+        </select>
+    </section>
+    <p>결과표시부분</p>
+    <script>
+        const x = document.querySelector('select');
+        const y = document.querySelector('p')
+        x.addEventListener("change", () => eat());
+        eat = () => {
+            //alert(typeof x.value); //x값
+            let z = Number(x.value);
+            switch(z){
+                case 1:
+                    z = "한식입니다🍙";
+                    break ;
+                case 2:
+                    z = "중식입니다🥧";
+                    break;
+                case 3:
+                    z = "일식입니다🍣";
+                    break;
+                case 4:
+                    z = "퓨전식입니다🍱";
+                    break;        
+            }
+            document.querySelector('p').innerHTML = "💛🍽무슨 음식 유형을 좋아하나요?🍽💛<br>📣" + z ;
+            //document.querySelector('p').innerText = "💛🍽무슨 음식 유형을 좋아하나요?🍽💛<br>📣" + z ;
+        }
+
+
+    </script>
+</body>
+</html>

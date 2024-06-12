@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach문과 DOM</title>
+</head>
+<body>
+    <ol>
+        <li>2500원</li>
+        <li>4700원</li>
+        <li>3300원</li>
+        <li>5200원</li>
+    </ol>
+    <footer>결과 표시하는 곳</footer>
+    <script>
+        const x = document.querySelectorAll('ol li');
+        const y = document.querySelector('footer');
+        let z = 0;
+        x.forEach( i => {
+            //console.log (i.innerText); //1,2,3 num배열의 값
+            //숫자 + 문자 조합에서 문자를 삭제하고 숫자(string)을 number형으로 변환
+            return z += parseInt(i); //parseInt**
+            y.innerHTML += '<br>' + i;
+        })
+    </script>
+</body>
+</html>

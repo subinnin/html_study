@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>true false에 따른 다른 답변</title>
+</head>
+<body>
+    <p>답변 다는 곳</p>
+
+    <script>
+        const $p = document.querySelector('p');
+
+        
+        let x = true;
+        let i = 20;
+        an = () => {
+            if(!i) alert('i값이 더 크네요');
+            else alert('i값이 더 작네요')
+        }
+        setTimeout( () => an(),1000); //지체시간 후에 함수를 호출한다
+    </script>
+</body>
+</html>

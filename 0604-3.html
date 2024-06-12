@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연습</title>
+</head>
+<body>
+    <p>3</p>
+    <script>
+        let x=5;
+        let y=3;
+        let z="5";
+        console.log(x == y); //(5와 3은 같다) - 두개의 value는 틀리다 - <콘솔창에 false>
+        console.log(x == z); //(5와 "5"는 같다) - 두개의 value는 같다 - <콘솔창에 true>
+        console.log(x === z); //(5와 "5"는 같다) - 두개의 value는 같지만, 두개의 type은 다르다 - <콘솔창에 false>
+
+        const $p = document.querySelector('p');
+        console.log (y == $p.innerHTML);
+        console.log (y === $p.innerHTML);
+        y++;
+        console.log(y);
+        $p.innerHTML += 1;
+        console.log($p.innerHTML); //"3" + "1" = "31"
+        
+        let pp = parseInt($p.innerHTML); //Number("31")
+        pp++;
+        console.log(pp); //32
+        $p.innerHTML = pp; 
+    </script>
+</body>
+</html>

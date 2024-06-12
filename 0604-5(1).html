@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연습_if else문</title>
+    <style>
+        p {color:skyblue;
+            background-color: black;
+            width:300px;
+            height : 30px;
+            text-align: center;
+            border-radius: 20px;}
+        aside {color:salmon;
+            background-color: black;
+            width:350px;
+            height : 30px;
+            text-align: center;
+            border-radius: 20px;
+            padding-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <p>🎈현재 얼마 있습니까??🎈</p>
+    <aside></aside>
+    <script>
+        /*프롬프트로 "오늘은 딸기 사과 수박이 준비되었습니다. 무엇을 드릴까요?"
+        1) 2000원
+        "딸기 드릴게요"
+        2) 3000원
+        "딸기나 포도 드릴게요"
+        3) 4000원
+        "딸기나 포도나 수박 드릴게요"
+        4) 10000원
+        "이거 다 드릴게요"
+        */
+        let x = prompt("현재 얼마 있습니까??","");
+        let fee = "";
+        //alert(x);
+        if (x >= 2000 && x < 3000){
+            document.querySelector('aside').innerHTML = "<br>" + "딸기🍓 드릴게요" ;
+        } else if (x >=3000 && x < 4000){
+            document.querySelector('aside').innerHTML = "<br>" + "딸기🍓/ 사과🍎 드릴게요 ";
+        } else if (x >=4000 && x < 9000){
+            document.querySelector('aside').innerHTML = "<br>" + "딸기🍓/ 사과🍎 /수박🍉 드릴게요";
+        } else {
+            document.querySelector('aside').innerHTML = "다 드릴게요🍓🍎🍉";
+        }
+        
+    </script>
+</body>
+</html>

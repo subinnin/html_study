@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트없이 애니메이션 실행하기</title>
+    <style>
+        * {margin:0; padding:0; box-sizing: border-box;}
+        body {
+            overflow-x:hidden;
+            width:100vw;
+            border:10px solid red;
+            position:relative;
+        }
+        #ra {
+            max-width: 2000px; 
+            background: url('images/dog.png');
+            display: flex;
+            justify-content: center;
+            flex-wrap:wrap;
+            position: relative;
+            /*animation:move 3s alternate both 2 linear;*/}
+
+        @keyframes move {
+            from {left : 0;}
+            to {left : 500px;}
+            
+        }
+        #ra div:first-of-type{
+            background-color: antiquewhite;
+            border-radius: 50% 50%;
+        }
+        #ra div:first-of-type:hover {
+            background-color: red;
+            transform:scale(2);
+            transition:1s;
+        }
+        #ra div:nth-of-type(2){
+            
+            width: 400px;
+            position:relative; top:0;
+        }
+        #ra div:nth-of-type(2).up{
+            top:-150px;
+            transition:3s;
+        }
+        #ra div:nth-of-type(3){
+            background-color: #ffd7a3;
+            border-top-left-radius:200px;
+        }
+        #ra div:nth-of-type(4){
+            width:400px;
+            border-top-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        /*마우스호버 애니부분*/
+        #ani {
+            
+            width:600px; 
+            position: relative;
+            left:0;
+            /*animation: move 5s both alternate infinite linear*/;
+        }
+        @keyframes move {
+            from {left : 0;}
+            to {left : 1000px;}
+        }
+        #ani h2{
+            display: block;
+            margin-left: 20px;
+        }
+        #ani a {
+            display: block;
+            background-color: rgb(255, 189, 148);
+            padding:20px;
+            text-decoration: none;
+            color:black;
+            font-weight: bold;
+            margin:5px;
+            margin-left: 50px;
+            width: 400px;
+            font-size: 1.2rem;
+        }
+        #ani a:hover {
+            width:600px;
+            transition : 30s;
+            background-color: rgb(255, 176, 100);
+        }
+        /*마우스 호버시 이동*/
+        #move {
+            display: block;
+        }
+        #move h2{
+            display: block;
+        }
+        #move div:first-of-type{
+            width: 400px;
+            height: 200px;
+            border-radius: 0;
+            background:white;
+        }
+        /*사각 콘테이너에 마우스 호버시 위치가 이동되려면 준비가 되어있어야함
+        -> position*/
+        #move div:first-of-type:hover{
+            width: 200px;
+            height: 200px;
+            border-radius: 0;
+            background: url("images/3.png") no-repeat;
+            margin-left:70px;
+            transform: scale(1.2) rotate(360deg);
+            transition : 0.5s;
+        }
+        #move div:last-of-type{
+            width: 350px;
+            height: 280px;
+            border-radius: 0;
+            background:url("images/2.png");
+        }
+        ul {border:2px solid red;
+            width:70%;
+            float:right;
+            }
+        span {float:right;
+            }
+        @media(max-width:550px){
+            ul {width:100%;}
+        }
+    
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href = "#">라인</a><span>2024-06-05</span></li>
+        <li><a href = "#">컴퓨터</a><span>2024-06-05</span></li>
+        <li><a href = "#">아트</a><span>2024-06-05</span></li>
+        <li><a href = "#">학원</a><span>2024-06-05</span></li>
+    </ul>
+    <section id = "move">
+        <h2>마우스 호버시 동물얼굴 나오기</h2>
+        <div></div>
+        <div></div>
+    </section>
+    <section id="ra">
+        <h2>반달이나 부채꼴모양 만들기<br><br><br><br></h2>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <section id="ani">
+        <h2>마우스 호버 애니메이션</h2>
+        <nav> <a href="https://naver.com">Company</a></nav>
+        <nav> <a href="https://apple.com">Product</a></nav>
+        <nav> <a href="https://adobe.com">Service</a></nav>
+        <nav> <a href="https://google.com">Customer Support</a></nav>
+        <nav> <a href="https://youtube.com">Community</a></nav>
+    </section>
+</body>
+</html>

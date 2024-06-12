@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시작화면 애니와 2초 후 팝업보이기</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;}
+        body {
+            background-color: bisque;
+            height: 200vh; /*스크롤 되게 길어짐. 기본은 100vh*/
+        }
+        #x {
+            position:fixed;
+            width:100%;
+            height:100vh;
+            top:0; /*h3까지 덮임*/
+        }
+        #x.gra {
+            background:radial-gradient(circle, transparent 5%, pink 10%);
+            animation :rara 3s both; /*animation : 이름 시간 범위*/
+        }
+        @keyframes rara{
+            from{transform:scale(1); opacity:1 ;}
+            to{transform:scale(30); opacity:0 ;}
+        }
+        body > h3{
+            border: 2px dashed brown;
+        }
+        article {
+            position:fixed;
+            background:#ffa0a0;
+            width:300px;
+            height :300px;
+            box-shadow : 0 0 10px 3px salmon;
+            top:100px;
+            left:calc((100% - 300px) / 2);
+            padding:20px;
+            border-radius: 20px;
+            display:none;
+        }
+        article button {
+            float:right; /*작은 부위에서 콘텐츠를 옮길 때 사용*/
+            margin-right: 20px;
+            margin-top: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>시작화면 애니메이션 (p.223)</h3>
+    <div id="x" class="gra"></div>
+    <section>
+        <h3>한글입숨</h3>
+        <p>국가는 농수산물의 수급균형과 유통구조의 개선에 노력하여 가격안정을 도모함으로써 농·어민의 이익을 보호한다. 재산권의 행사는 공공복리에 적합하도록 하여야 한다. 대통령은 제4항과 제5항의 규정에 의하여 확정된 법률을 지체없이 공포하여야 한다. 제5항에 의하여 법률이 확정된 후 또는 제4항에 의한 확정법률이 정부에 이송된 후 5일 이내에 대통령이 공포하지 아니할 때에는 국회의장이 이를 공포한다. 원장은 국회의 동의를 얻어 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다. 법률은 특별한 규정이 없는 한 공포한 날로부터 20일을 경과함으로써 효력을 발생한다. 국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다.</p>
+        <p>군인은 현역을 면한 후가 아니면 국무위원으로 임명될 수 없다. 국가는 여자의 복지와 권익의 향상을 위하여 노력하여야 한다. 국회는 의장 1인과 부의장 2인을 선출한다. 국가는 농지에 관하여 경자유전의 원칙이 달성될 수 있도록 노력하여야 하며, 농지의 소작제도는 금지된다. 국군의 조직과 편성은 법률로 정한다. 국회는 선전포고, 국군의 외국에의 파견 또는 외국군대의 대한민국 영역안에서의 주류에 대한 동의권을 가진다. 국가는 사회보장·사회복지의 증진에 노력할 의무를 진다. 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를 진다. 사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다.</p>
+        <p>헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다. 국가는 농·어민과 중소기업의 자조조직을 육성하여야 하며, 그 자율적 활동과 발전을 보장한다. 국회의원이 회기전에 체포 또는 구금된 때에는 현행범인이 아닌 한 국회의 요구가 있으면 회기중 석방된다. 국회의원은 국회에서 직무상 행한 발언과 표결에 관하여 국회외에서 책임을 지지 아니한다. 모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 국회는 헌법 또는 법률에 특별한 규정이 없는 한 재적의원 과반수의 출석과 출석의원 과반수의 찬성으로 의결한다. 가부동수인 때에는 부결된 것으로 본다.</p>
+    </section>
+    <article>
+        <h4>팝업부분</h4>
+        <button>닫기</button>
+    </article>
+    <script>
+        setTimeout( () => off() , 1000); /*setTimeout(함수,시간) 2s는 2000으로 표기*/
+        off = () => {
+            document.querySelector('#x').style.display ='none';
+            document.querySelector('article').style.display = 'block';
+        }
+        const $btn = document.querySelector('article button');
+        $btn.addEventListener("click", () => {
+            $btn.parentElement.style.display ='none'; /*button을 눌렀더니 parent인 article이 사라지는거니까 parentElement 사용*/
+
+        })
+    </script>
+</body>
+</html>

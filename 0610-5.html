@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for in과 for of문</title>
+</head>
+<body>
+    <ol>
+        <li>2500원</li>
+        <li>4700원</li>
+        <li>3300원</li>
+        <li>5200원</li>
+    </ol>
+    <footer>결과 표시하는 곳</footer>
+    <script>
+        const num = ["딸기","사과","수박"];
+        num.forEach( function(x, y, z){
+            //console.log (x); //1,2,3 num배열의 값
+            //console.log (y); //0,1,2 num index번호
+            console.log (z); //[1,2,3] 3회 출력. 각 아이템의 배열 전체를 각각 출력
+        })
+    </script>
+</body>
+</html>

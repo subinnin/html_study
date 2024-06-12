@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>true/false를 사용한 공 이동하기</title>
+    <style>
+        p {width:200px;
+            height:200px;
+            border-radius: 50%;
+            background-image: radial-gradient(aqua 10%, darkblue 90%);
+            position: relative;}
+        main{width:250px;
+            height:250px;
+            border-radius: 50%;
+            background-image: radial-gradient(yellow 10%, orange 90%);
+            position:absolute;
+            }    
+        footer{width:300px;
+            height:300px;
+            border-radius: 50%;
+            background-image: radial-gradient(pink 10%, darkred 90%);
+            position: absolute;
+            margin-left: 500px;
+            top:0;
+            }
+        article{width:150px;
+            height:150px;
+            border-radius: 50%;
+            background-image: radial-gradient(pink 10%, purple 90%);
+            position:absolute;
+            }
+    </style>
+</head>
+<body>
+    <p></p>
+    <main></main>
+    <footer></footer>
+    <article></article>
+    <script>
+        const $p = document.querySelector('p');
+        const $footer = document.querySelector('footer');
+        const $main = document.querySelector('main');
+        const $article =document.querySelector('article');
+        setInterval(() => move(), 1);//0.01초 후에 move()
+        let i = 10; //i++하려고 let 키워드 사용함
+        let j = true;
+        let sp = 5;
+        move = () => {
+            if(j) { //innerWidth = 스크롤바를 뺀 안쪽
+                i = i + sp;
+                if(i >= (window.innerWidth - $p.offsetWidth)) {j = false;}//innerWidth = 스크롤바를 뺀 안쪽
+                if(i >= (window.innerHeight - $footer.offsetHeight)) {j=false;}
+            }else {
+                i = (i - sp);
+                if(i <= 0) {j = true;}
+            }
+            $p.style.left = i + 'px';
+            $footer.style.top = i + 'px';
+            $main.style.left = i + 'px';
+            $main.style.top = i + 'px';
+            $article.style.bottom = i +'px';
+            $article.style.left = i +'px';                
+        }
+
+
+
+        
+    </script>
+</body>
+</html>

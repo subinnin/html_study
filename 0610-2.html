@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펼침메뉴 (value값이 없을때)</title>
+    <style>
+        h2 {
+            border:2px solid pink;
+            width: 300px;
+            text-align: center;
+            background: gold;}
+        body {
+            width:304px;
+            height:300px;
+            border:2px solid pink;
+        }
+    </style>
+</head>
+<body>
+    <section id = "menu">
+        <h2>선호 음식 유형</h2>
+        <select>
+            <option>유형선택</option>
+            <option>한식</option>
+            <option>중식</option>
+            <option>일식</option>
+            <option>퓨전식</option>
+        </select>
+    </section>
+    <p>결과표시부분</p>
+    <script>
+        const x = document.querySelector('select');
+        const y = document.querySelector('p')
+        x.addEventListener("change", () => eat());
+        eat = () => {
+            //alert(x.selectedIndex);
+            const i = x.selectedIndex;
+            //alert(x[i].innerText);
+            const z = x[i].innerText;
+            y.innerText = "📣고객님은 " + z + " 유형을 선택하셨습니다📣"
+        }
+
+
+    </script>
+</body>
+</html>

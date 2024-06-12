@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>true/false를 사용한 공 이동하기</title>
+    <style>
+        p {width:200px;
+            height:200px;
+            border-radius: 50%;
+            background-image: radial-gradient(aqua 10%, darkblue 90%);
+            position: relative;}
+        div {
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            background-image:radial-gradient(bisque, brown) ;
+            position : relative;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <div></div>
+    <script>
+        const $p = document.querySelector('p');
+        const $div = document.querySelector('div');
+        setInterval(() => move(), 7);//0.01초 후에 move()
+       
+        let i = 10; //왼쪽공의 위치이며, 증/감 let 키워드 사용함
+        let j = 10; // 아래쪽공 위치
+        let sp = 5; //속도와 관련됨. 숫자를 증가하면 공이 빨라짐.
+         
+        let ww= window.innerWidth; //윈도우 너비
+        let pw = $p.offsetWidth; //공의 너비
+         
+        let wh= window.innerHeight;
+        let dw = $div.offsetWidth;
+
+        move = () => {
+            //오른쪽방향으로 이동
+            i += sp; 
+
+            //반대방향으로 리턴
+            if(i + pw >= ww || i <= 0 )
+                sp *= -1; //10+5
+        
+            $p.style.left = i + 'px';
+            
+            //아래쪽방향으로 이동
+            j += sp;
+            
+            //반대방향으로 리턴
+            if(j + dw >= wh || j <= 0 ) 
+                sp *= -1;
+            $div.style.top = j + 'px'; 
+            }       
+       
+    </script>
+</body>
+</html>

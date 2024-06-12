@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펼침메뉴를 이용한 값 전송하기</title>
+    <style>
+        nav {
+            border : 5px solid black;
+            max-width: 230px;
+            background: linear-gradient( green,#ceffce, white) ;
+            border-radius: 20px;
+            margin: auto;
+            
+        }
+        h3 {
+            max-width: 220px;
+            border: 3px solid green;
+            text-align: center;
+            background:linear-gradient(#f3ffed, white);
+            border-radius: 10px;
+            padding:10px;
+            margin-left:0 5px;}
+        p {
+            background-color: beige;
+            max-width: 230px;
+            border-radius:20px 10px;
+            border:2px dashed orange;
+            text-align: center;}
+
+        #ba {
+            margin-left:65px;}
+
+        main {
+            background-color: blanchedalmond;
+            max-width: 230px;
+            border-radius:10px 20px;
+            border:2px dashed salmon;
+            text-align: center;
+            margin-bottom:20px;}
+
+        #fr {
+            margin-left:65px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+    <h3>⚾야구장 입장료⚾</h3>
+    <select id="ba">
+        <option>선택하세요</option>
+        <option value="1">아동</option>
+        <option value="2">청소년</option>
+        <option value="3">성인</option>
+    </select>
+    <p></p>
+    <h3>🍌🍇과일선택🍉🍇</h3>
+    <select id ="fr">
+        <option>선택하세요</option>
+        <option>수박</option>
+        <option>포도</option>
+        <option>바나나</option>
+    </select>
+    <main></main>
+    <script>
+        const x = document.querySelector('#ba');
+        x.addEventListener('change', () => zz());
+        zz = () => {
+            //alert(x);
+        let y = Number(x.value);
+        switch(y){
+            case 1: 
+                y = "아동은 무료입니다."; 
+                break;
+            case 2: y = "청소년은 2000원입니다.";
+                break;   
+            case 3: y = "성인은 4000원입니다.";
+                break; 
+            default : y = "입력값을 다시 확인하세요."
+        }
+        document.querySelector('p').innerHTML = "💰가격은 얼마입니까?<br>📣"+y;
+        }
+
+        const z = document.querySelector('#fr');
+        z.addEventListener("change", () => cc());
+        cc = () => {
+            //alert(z.selectedIndex);
+        let zz = Number(z.selectedIndex);
+        switch(zz){
+             case 1:
+                zz = "수박입니다.";
+                break;
+            case 2:
+                zz = "포도입니다.";
+                break;
+            case 3:
+                zz = "바나나입니다.";
+                break;
+            default:
+                zz = "입력값을 다시 확인하세요";
+            }
+        
+        document.querySelector('main').innerHTML = "💰무슨 과일입니까?<br>📣" + zz;
+    }
+    
+    </script>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p.344 switch()문 작성하기</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        let s = prompt("수강과목은??", "");
+        s = s.toUpperCase();
+        if (s =="자바스크립트"){
+            s = "JAVASCRIPT";
+        } 
+        switch(s){
+            case 'HTML':
+                s += '은 1학점입니다';
+                break;
+            case 'CSS':
+                s += '는 2학점입니다';
+                break;
+            case 'JAVASCRIPT':
+                s  += '는 3학점입니다';
+                break;
+            default :
+                s = '해당과목이 없습니다';
+        }
+    document.querySelector('p').innerHTML = s;
+    </script>
+</body>
+</html>

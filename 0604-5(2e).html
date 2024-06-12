@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연습_if else문</title>
+    <style>
+        p {color:skyblue;
+            background-color: black;
+            width:600px;
+            height : 30px;
+            text-align: center;
+            border-radius: 20px;
+            margin:auto;}
+        aside {color:salmon;
+            background-color: black;
+            width:100px;
+            height : 30px;
+            text-align: center;
+            border-radius: 20px;
+            padding-bottom: 20px;
+            margin:auto;}
+    </style>
+</head>
+<body>
+    <p>🎈숫자 3개를 입력하고, 가장 큰 숫자를 반환하세요🎈</p>
+    <aside></aside>
+    <script>
+        
+        let x = prompt("첫번째 숫자를 입력하세요","");
+        let y = prompt("두번째 숫자를 입력하세요","");
+        let z = prompt("세번째 숫자를 입력하세요","");
+
+        let result = "";
+        if (x > y && x > z){
+            document.querySelector('aside').innerHTML = "<br>" + x + "입니다" ;
+        } else if (x <= y && y > z){
+            document.querySelector('aside').innerHTML = "<br>" + y +"입니다";
+        } else {
+            document.querySelector('aside').innerHTML = "<br>" + z +"입니다";
+        }
+        
+    </script>
+</body>
+</html>
